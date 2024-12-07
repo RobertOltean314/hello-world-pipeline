@@ -1,0 +1,28 @@
+name: Assembly Build and Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up NASM and build essentials
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y nasm build-essential
+
+      - name: Assemble the code
+        run: ./assemble.sh hello.asm hello
+
+      - name: Run tests
+        run: ./test.sh
