@@ -1,0 +1,7 @@
+# Ignore runner configuration files
+actions-runner/
+*.token
+config.sh
+svc.sh
+*.log
+_diag/
