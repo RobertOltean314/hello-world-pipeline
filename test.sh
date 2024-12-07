@@ -8,7 +8,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Check if the output matches the expected string
-if grep -xq "Hello world!" output.txt; then
+if grep -xq "Hello Lume" output.txt; then
     echo "Test passed: Output is correct."
     exit 0
 else

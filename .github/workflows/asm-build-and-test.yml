@@ -1,4 +1,4 @@
-name: Assembly Build and Test
+name: C Build and Test
 
 on:
   push:
@@ -11,17 +11,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up NASM and build essentials
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y nasm build-essential
-
-      - name: Assemble the code
+      - name: Build the application
         run: ./assemble.sh hello.asm hello
 
       - name: Run tests

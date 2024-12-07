@@ -1,6 +1,6 @@
 ; Define variables in the data section
 section .data
-    hello:     db 'Hello world!', 0x0A  ; null-terminated string
+    hello:     db 'Hello Lume', 0x0A  ; null-terminated string
     helloLen:  equ $ - hello          ; length of the string
 
 ; Code goes in the text section
